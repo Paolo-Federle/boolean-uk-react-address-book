@@ -11,13 +11,11 @@ export default function App() {
   //TODO: Load all contacts on useEffect when component first renders
   useEffect(() => {
     fetch('http://localhost:4000/contacts')
-      .then(resp => resp.json())
+      .then(response  => response .json())
       .then(data => {
         setContacts(data)
         console.log("my contacts is", contacts)
-
-      }
-      )
+      })
   }, [])
 
   // console.log("my data is", contacts)
