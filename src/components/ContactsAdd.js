@@ -17,6 +17,9 @@ function ContactsAdd(props) {
   const [lastName, setLastName] = useState()
   const [street, setStreet] = useState()
   const [city, setCity] = useState()
+  const [email, setEmail] = useState()
+  const [linkedIn, setLinkedIn] = useState()
+  const [twitter, setTwitter] = useState()
 
 
   function handleFirstName(event) {
@@ -42,9 +45,40 @@ function ContactsAdd(props) {
     console.log(city)
   }
 
+  function handleEmail(event){
+    setEmail(event.target.value)
+  }
+
+  function handleLinkedIn(event){
+    console.log(event.target.value)
+    setLinkedIn(event.target.value)
+  }
+  console.log("linkedin is: ", linkedIn)
+
+  function handleTwitter(event){
+    setTwitter(event.target.value)
+  }
+
   const handleSubmit = async (event) => {
     event.preventDefault()
-   
+    const newContact = {
+      firstName: firstName,
+    lastName: lastName,
+    street: street,
+    city: city,
+    email: email,
+    linkedin: linkedIn,
+    twitter: twitter,
+    }
+    console.log(newContact)
+    const res = await fetch('http://localhost:4000/contacts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newContact)
+    })
+    const data = await res.json()
+    setContacts([...contacts, data])
+    navigate('/')
   }
 
   return (
@@ -62,6 +96,15 @@ function ContactsAdd(props) {
 
       <label htmlFor="city">City:</label>
       <input id="city" name="city" type="text" onChange={handleCity} required />
+
+      <label htmlFor="email">Email:</label>
+      <input id="email" name="email" type="text" onChange={handleEmail} required />
+
+      <label htmlFor="linkedin">LinkedIn:</label>
+      <input id="linkedin" name="linkedin" type="text" onChange={handleLinkedIn} required />
+
+      <label htmlFor="twitter">Twitter:</label>
+      <input id="twitter" name="twitter" type="text" onChange={handleTwitter} required />
 
       <div className="actions-section">
         <button className="button blue" type="submit">

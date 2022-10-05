@@ -26,6 +26,11 @@ function ContactsList(props) {
                   state={{ contact }}
                   to={`/${contact.id}`}>
                   View
+                </Link> / 
+                <Link
+                  state={{ contact }}
+                  to={`/${contact.id}`}>
+                    Edit
                 </Link>
               </p>
             </li>
