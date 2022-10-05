@@ -14,7 +14,7 @@ export default function App() {
       .then(response  => response .json())
       .then(data => {
         setContacts(data)
-        console.log("my contacts is", contacts)
+        // console.log("my contacts is", contacts)
       })
   }, [])
 
@@ -28,7 +28,7 @@ export default function App() {
         <ul>
           {/* TODO: Make these links */}
           <li><Link to="/">Contacts List</Link></li>
-          <li><Link to="/">Add New Contact</Link></li>
+          <li><Link to="/addcontacts">Add New Contact</Link></li>
         </ul>
       </nav>
       <main>
@@ -36,6 +36,14 @@ export default function App() {
         <Route
           path="/"
           element={<ContactsList contacts={contacts} />}
+        />
+        <Route
+          path="/addcontacts"
+          element={<ContactsAdd contacts={contacts} setContacts={setContacts}/>}
+        />
+        <Route
+          path="/:id"
+          element={<ContactsView contacts={contacts} />}
         />
         </Routes>
       </main>
