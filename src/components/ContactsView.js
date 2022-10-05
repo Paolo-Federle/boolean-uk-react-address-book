@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { useLocation } from "react-router-dom"
-import { Link } from "react-router-dom";
 
 function ContactsView(props) {
   const { contacts } = props
@@ -13,6 +12,7 @@ function ContactsView(props) {
   //With useEffect, load the contact when params changes
   //and update contact state
   
+  console.log("my contact is:", contact)
   const location = useLocation()
 
   

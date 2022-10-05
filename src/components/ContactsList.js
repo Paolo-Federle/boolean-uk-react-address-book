@@ -17,7 +17,7 @@ function ContactsList(props) {
     // getNewContact()
   }
 
-  console.log("contacts is: ", contacts)
+  // console.log("contacts is: ", contacts)
   function deleteContact(id){
     fetch(`http://localhost:4000/contacts/${id}`, {
       method: 'DELETE',
@@ -60,11 +60,16 @@ function ContactsList(props) {
                   View
                 </Link> / 
                 <Link
-                  state={{ contact }}
-                  to={`/${contact.id}`}>
+                  state={{ contact}}
+                  to={`/${contact.id}/edit`}>
                     Edit
+                </Link> / 
+                <Link
+                  state={{ contacts }}
+                  to={`/${contact.id}`}
+                  onClick={() => handleDeleteContact(contact.id)}>
+                   Delete
                 </Link>
-                 <span onClick={() => handleDeleteContact(contact.id)}>/ Delete</span>
               </p>
             </li>
           )
