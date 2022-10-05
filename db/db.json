@@ -13,16 +13,6 @@
       "lastName": "Hopper",
       "street": "32 Deebug Road",
       "city": "London"
-    },
-    {
-      "firstName": "Cicoria",
-      "lastName": "Lancelot",
-      "street": "Avenue 160",
-      "city": "Somewhere",
-      "email": "Nope@mymail.com",
-      "linkedin": "https://www.google.com/webhp?hl=it&ictx=2&sa=X&ved=0ahUKEwjglMLE6Mj6AhXlX_EDHT_3D4EQPQgJ",
-      "twitter": "https://www.google.com/webhp?hl=it&ictx=2&sa=X&ved=0ahUKEwjglMLE6Mj6AhXlX_EDHT_3D4EQPQgJ",
-      "id": 13
     }
   ]
 }

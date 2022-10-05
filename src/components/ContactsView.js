@@ -15,6 +15,8 @@ function ContactsView(props) {
   
   const location = useLocation()
 
+  
+
   useEffect(() => {
     if (location.state) {
       const { contact } = location.state
