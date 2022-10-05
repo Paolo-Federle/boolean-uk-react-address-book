@@ -7,6 +7,21 @@ function ContactsList(props) {
   //"contacts" must be passed as prop to this component
   const { contacts } = props
 
+  const [contact, setContact] = useState(contacts)
+
+  function handleDeleteContact(id){
+    deleteContact(id)
+  }
+
+  console.log(contacts)
+  function deleteContact(id){
+    fetch(`http://localhost:4000/contacts/${id}`, {
+      method: 'DELETE',
+    })
+    .then(response => response.json())
+    .then(data => setContact(data))
+  }
+
   return (
     <>
       <header>
@@ -32,6 +47,7 @@ function ContactsList(props) {
                   to={`/${contact.id}`}>
                     Edit
                 </Link>
+                 <span onClick={() => handleDeleteContact(contact.id)}>/ Delete</span>
               </p>
             </li>
           )

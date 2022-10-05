@@ -23,26 +23,26 @@ function ContactsAdd(props) {
 
 
   function handleFirstName(event) {
-    console.log(event.target.value)
+    // console.log(event.target.value)
     setFirstName(event.target.value)
   }
 
   function handleLastName(event){
-    console.log(event.target.value)
+    // console.log(event.target.value)
     setLastName(event.target.value)
-    console.log(lastName)
+    // console.log(lastName)
   }
 
   function handleStreet(event){
-    console.log(event.target.value)
+    // console.log(event.target.value)
     setStreet(event.target.value)
-    console.log(street)
+    // console.log(street)
   }
 
   function handleCity(event){
-    console.log(event.target.value)
+    // console.log(event.target.value)
     setCity(event.target.value)
-    console.log(city)
+    // console.log(city)
   }
 
   function handleEmail(event){
@@ -50,10 +50,10 @@ function ContactsAdd(props) {
   }
 
   function handleLinkedIn(event){
-    console.log(event.target.value)
+    // console.log(event.target.value)
     setLinkedIn(event.target.value)
   }
-  console.log("linkedin is: ", linkedIn)
+  // console.log("linkedin is: ", linkedIn)
 
   function handleTwitter(event){
     setTwitter(event.target.value)
@@ -70,7 +70,7 @@ function ContactsAdd(props) {
     linkedin: linkedIn,
     twitter: twitter,
     }
-    console.log(newContact)
+    // console.log(newContact)
     const res = await fetch('http://localhost:4000/contacts', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
