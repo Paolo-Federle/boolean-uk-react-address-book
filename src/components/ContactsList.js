@@ -4,7 +4,6 @@ import { Link, useSearchParams } from "react-router-dom"
 
 function ContactsList(props) {
 
-  //"contacts" must be passed as prop to this component
   const { setContacts, contacts } = props
 
 
@@ -52,7 +51,6 @@ function ContactsList(props) {
                   onClick={() => deleteContact(contact.id)}>
                    <button>Delete</button>
                 </Link>
-                {/* <button>Delete</button> */}
               </p>
             </li>
           )

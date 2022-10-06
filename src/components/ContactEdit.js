@@ -41,28 +41,20 @@ function ContactEdit(props) {
   const [twitter, setTwitter] = useState("")
   const [id, setId] = useState("")
 
-  console.log("id è ", id)
   function handleFirstName(event) {
-    console.log(event.target.value)
     setFirstName(event.target.value)
   }
 
   function handleLastName(event) {
-    console.log(event.target.value)
     setLastName(event.target.value)
-    console.log(lastName)
   }
 
   function handleStreet(event) {
-    console.log(event.target.value)
     setStreet(event.target.value)
-    console.log(street)
   }
 
   function handleCity(event) {
-    console.log(event.target.value)
     setCity(event.target.value)
-    console.log(city)
   }
 
   function handleEmail(event) {
@@ -70,23 +62,17 @@ function ContactEdit(props) {
   }
 
   function handleLinkedIn(event) {
-    // console.log(event.target.value)
     setLinkedIn(event.target.value)
   }
-  // console.log("linkedin is: ", linkedIn)
 
   function handleTwitter(event) {
     setTwitter(event.target.value)
   }
 
-  console.log("location.state: ", location.state)
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-  //   const newContact = {
-      
-  //   }
-  //   // console.log(newContact)
+    
     const res = await fetch(`http://localhost:4000/contacts/${id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },

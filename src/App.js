@@ -15,11 +15,8 @@ export default function App() {
       .then(response  => response .json())
       .then(data => {
         setContacts(data)
-        // console.log("my contacts is", contacts)
       })
   }, [])
-
-  // console.log("my data is", contacts)
 
 
   return (
@@ -27,7 +24,6 @@ export default function App() {
       <nav>
         <h2>Menu</h2>
         <ul>
-          {/* TODO: Make these links */}
           <li><Link to="/">Contacts List</Link></li>
           <li><Link to="/addcontacts">Add New Contact</Link></li>
         </ul>

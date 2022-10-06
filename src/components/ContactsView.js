@@ -5,12 +5,7 @@ import { useLocation } from "react-router-dom"
 function ContactsView(props) {
   const { contacts } = props
 
-  // const { contact.id } = useParams()
   const [contact, setContact] = useState(false)
-
-  //TODO: Get the contact to load from the params and fetch.
-  //With useEffect, load the contact when params changes
-  //and update contact state
   
   console.log("my contact is:", contact)
   const location = useLocation()
@@ -23,8 +18,6 @@ function ContactsView(props) {
       setContact(contact)
     }
   }, [location])
-
-    // console.log("my contacts is", contacts)
 
   if (!contact) {
     return <p>Loading</p>
