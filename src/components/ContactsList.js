@@ -7,17 +7,8 @@ function ContactsList(props) {
   //"contacts" must be passed as prop to this component
   const { setContacts, contacts } = props
 
-  // const [oneContact, setContact] = useState(contacts)
 
-  // console.log("contacts is", contacts)
-  // console.log("contact is", oneContact)
 
-  function handleDeleteContact(id){
-    deleteContact(id)
-    // getNewContact()
-  }
-
-  // console.log("contacts is: ", contacts)
   function deleteContact(id){
     fetch(`http://localhost:4000/contacts/${id}`, {
       method: 'DELETE',
@@ -29,15 +20,6 @@ function ContactsList(props) {
           .then(data => setContacts(data)
     )})
   }
-
-  // function getNewContact(){
-  //   fetch('http://localhost:4000/contacts')
-  //     .then(response  => response .json())
-  //     .then(data => {
-  //       console.log("my newdata is: ", data)
-  //       setContacts(data)
-  //     })
-  // }
 
   return (
     <>
@@ -57,19 +39,20 @@ function ContactsList(props) {
                 <Link
                   state={{ contact }}
                   to={`/${contact.id}`}>
-                  View
-                </Link> / 
+                  <button>View</button>
+                </Link> 
                 <Link
                   state={{ contact}}
                   to={`/${contact.id}/edit`}>
-                    Edit
-                </Link> / 
+                    <button>Edit</button>
+                </Link>
                 <Link
                   state={{ contacts }}
-                  to={`/${contact.id}`}
-                  onClick={() => handleDeleteContact(contact.id)}>
-                   Delete
+                  to={`/`}
+                  onClick={() => deleteContact(contact.id)}>
+                   <button>Delete</button>
                 </Link>
+                {/* <button>Delete</button> */}
               </p>
             </li>
           )
