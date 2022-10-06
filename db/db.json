@@ -15,7 +15,7 @@
       "city": "London"
     },
     {
-      "firstName": "Paolodcsaxxsdcddsd",
+      "firstName": "Paolololo",
       "lastName": "Federle",
       "street": "Via Vittorio Bachelet 165",
       "city": "VICENZA",
@@ -23,6 +23,16 @@
       "linkedin": "dsdcwcecd",
       "twitter": "cdwxwdxwxw",
       "id": 3
+    },
+    {
+      "firstName": "Paolo",
+      "lastName": "Federle",
+      "street": "Via Vittorio Bachelet 165",
+      "city": "VICENZA",
+      "email": "federlepaolo95@gmail.com",
+      "linkedin": "dsdcwcecd",
+      "twitter": "twitter",
+      "id": 4
     }
   ]
 }

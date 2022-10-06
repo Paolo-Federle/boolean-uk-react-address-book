@@ -5,9 +5,10 @@ import { useEffect, useState } from "react"
 function ContactEdit(props) {
 
   // const [contact, setContact] = useState()
-  // const { setContacts } = props;
+  // const { setContacts } = props
+  // const { setContacts, contacts } = props
   
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
   const location = useLocation()
 
   useEffect(() => {
@@ -21,7 +22,6 @@ function ContactEdit(props) {
       setLinkedIn(contact.linkedin)
       setTwitter(contact.twitter)
       setId(contact.id)
-      // setContact(contact);
     }
   }, [location]);
 
@@ -97,9 +97,9 @@ function ContactEdit(props) {
     })
     const data = await res.json()
     console.log("data is: ", data)
-    console.log("contacts is: ", contacts)
-  //   setContacts([...contacts, data])
-  //   navigate('/')
+    // console.log("contacts is: ", contacts)
+    // setContacts([...contacts])
+    navigate('/')
   }
 
   return (
