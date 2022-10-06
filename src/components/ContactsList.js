@@ -4,8 +4,15 @@ import { Link, useSearchParams } from "react-router-dom"
 
 function ContactsList(props) {
 
-  const { setContacts, contacts } = props
+  const { setContacts, contacts, dataFetched , setDataFetched } = props
+  // const [dataFecthed , setDataFecthed ] = useState(false)
 
+
+  console.log("contacts is", contacts)
+  if (!contacts) {
+    console.log("condition triggered")
+    // return <div className="loader"></div>
+  }
 
 
   function deleteContact(id){
@@ -20,12 +27,24 @@ function ContactsList(props) {
     )})
   }
 
+  // function noContactShowMessage() {
+  //   if (contacts.length === 0)  {
+  //     return <div className="loader"></div>
+  //   }
+  // }
+
   return (
     <>
       <header>
         <h2>Contacts</h2>
       </header>
       <ul className="contacts-list">
+        {contacts.length ===0 && dataFetched &&(
+          <div>No contact to show</div>
+        )}
+        {!dataFetched &&(
+          <div className="loader"></div>
+        )}
         {contacts.map((contact, index) => {
           const { firstName, lastName } = contact
           return (

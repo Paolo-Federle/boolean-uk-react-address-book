@@ -8,15 +8,27 @@ import "./styles/styles.css"
 
 export default function App() {
   const [contacts, setContacts] = useState([])
+
+  const [dataFetched , setDataFetched ] = useState(false)
+
   
+
+  if (!contacts) {
+    console.log("condition triggered")
+    // return <div className="loader"></div>
+  }
+
+
   //TODO: Load all contacts on useEffect when component first renders
   useEffect(() => {
     fetch('http://localhost:4000/contacts')
       .then(response  => response .json())
       .then(data => {
         setContacts(data)
+        setDataFecthed(true)
       })
   }, [])
+ 
 
 
   return (
@@ -32,7 +44,7 @@ export default function App() {
         <Routes>
         <Route
           path="/"
-          element={<ContactsList contacts={contacts} setContacts={setContacts}/>}
+          element={<ContactsList contacts={contacts} setContacts={setContacts} dataFetched={dataFetched} setDataFetched={setDataFetched}/>}
         />
         <Route
           path="/addcontacts"

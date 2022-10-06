@@ -1,28 +1,14 @@
 {
   "contacts": [
     {
-      "id": 1,
-      "firstName": "John",
-      "lastName": "Carmack",
-      "street": "10 Keen Street",
-      "city": "London"
-    },
-    {
-      "id": 2,
-      "firstName": "Grace",
-      "lastName": "Hopper",
-      "street": "32 Deebug Road",
-      "city": "London"
-    },
-    {
-      "firstName": "dscdsc",
-      "lastName": "cdscdscds",
-      "street": "scddsccdscsd",
-      "city": "cdscdscdscdsc",
-      "email": "cdscsdcsd",
-      "linkedin": "cdcsdcsdcdsds",
-      "twitter": "cdscdscsdcdscdscdscds",
-      "id": 3
+      "firstName": "Paolo",
+      "lastName": "Federle",
+      "street": "Via Vittorio Bachelet 165",
+      "city": "VICENZA",
+      "email": "federlepaolo95@gmail.com",
+      "linkedin": "wdx",
+      "twitter": "xxwxw",
+      "id": 1
     }
   ]
 }

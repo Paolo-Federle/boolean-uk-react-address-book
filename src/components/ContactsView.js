@@ -20,7 +20,7 @@ function ContactsView(props) {
   }, [location])
 
   if (!contact) {
-    return <p>Loading</p>
+    return <div className="loader"></div>
   }
 
   return (
