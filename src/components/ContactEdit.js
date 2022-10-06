@@ -4,9 +4,9 @@ import { useEffect, useState } from "react"
 
 function ContactEdit(props) {
 
-  // const [contact, setContact] = useState()
+  // const [contacts, setContacts] = useState()
   // const { setContacts } = props
-  // const { setContacts, contacts } = props
+  const { contacts, setContacts } = props
   
   const navigate = useNavigate()
   const location = useLocation()
@@ -97,8 +97,8 @@ function ContactEdit(props) {
     })
     const data = await res.json()
     console.log("data is: ", data)
-    // console.log("contacts is: ", contacts)
-    // setContacts([...contacts])
+    console.log("contacts is: ", contacts)
+    // setContacts([...contacts, data])
     navigate('/')
   }
 

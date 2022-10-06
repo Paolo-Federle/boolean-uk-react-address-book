@@ -48,7 +48,7 @@ export default function App() {
         />
         <Route
           path="/:id/edit"
-          element={<ContactEdit setContacts={setContacts} contacts={contacts}/>}
+          element={<ContactEdit contacts={contacts} setContacts={setContacts}/>}
         />
         </Routes>
       </main>
